@@ -1,0 +1,22 @@
+7 November 2022
+------------------------------
+
+1. Install Docker
+
+I encountered error when starting up Docker. The error read:
+
+
+Hardware assisted virtualization and data execution protection must be enabled in the BIOS. See https://docs.docker.com/desktop/windows/troubleshoot/#virtualization
+
+This can be fixed in BIOS setup. Thankfully, I came across this blog post and I quickly resolved my the issue. https://nerdschalk.com/how-to-enable-virtualization-in-bios-on-windows-11-or-10/. 
+Take a look at that if you ever encounter the same issue
+
+2. Docker Usecase
+-------------------------------
+From the command prompt:
+
+- Use docker --version to check Docker version. Ensure that it is 19 and above
+- docker run neodevops/todo-rest-api-h2:1.0.0.RELEASE
+
+
+
