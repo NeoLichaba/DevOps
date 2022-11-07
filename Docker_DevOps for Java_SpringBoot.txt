@@ -64,11 +64,20 @@ docker run in28min/todo-rest-api-h2:1.0.0.RELEASE
 - docker container ls - see which containers are running
 - docker container ls - a - all containers shown irrespective of container
 
-- docker run -p 5001:5000 -d in28min/todo-rest-api-h2:1.0.0.RELEASEdockercan run same version of app but different container 
+- docker run -p 5001:5000 -d in28min/todo-rest-api-h2:1.0.0.RELEASE docker can run same version of app but different container 
 - docker logs -f <first 5 digits from container> - check if running
   => 2 instances of 
 
 - docker container stop <id> - stop docker container
 
+5. Docker Architecture
+------------------------------------------------------------------------
 
+- Docker Client - responsible for docker daemon
+- Docker Daemon - responsible for managing containers, local images and pulls images from registry if not available
+		- process instructions to create images
+
+- run from client:
+  docker run -p 5000:5000 -d in28min/todo-rest-api-h2:0.0.1-SNAPSHOT
+  - sent to docker daemon, will go to registry and download image
 
