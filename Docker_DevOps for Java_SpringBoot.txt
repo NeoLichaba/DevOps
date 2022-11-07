@@ -34,7 +34,7 @@ From the command prompt:
   - run localhost:5000/hello-world in browser 
 
 
-3. Docker Concepts - Registry, Repository, Tag, Image and Containers
+4. Docker Concepts - Registry, Repository, Tag, Image and Containers
 -----------------------------------------------------------------------
 docker run in28min/todo-rest-api-h2:1.0.0.RELEASE
 
@@ -52,7 +52,7 @@ docker run in28min/todo-rest-api-h2:1.0.0.RELEASE
 * Tag
 -  1.0.0.RELEASE - tag, version being used
 
-4. Docker Images and Containers
+5. Docker Images and Containers
 ------------------------------------------------------------------------
 
 * Image
@@ -71,7 +71,7 @@ docker run in28min/todo-rest-api-h2:1.0.0.RELEASE
 
 - docker container stop <id> - stop docker container
 
-5. Docker Architecture
+7. Docker Architecture
 ------------------------------------------------------------------------
 
 - Docker Client - responsible for docker daemon
@@ -83,15 +83,16 @@ docker run in28min/todo-rest-api-h2:1.0.0.RELEASE
   - sent to docker daemon, will go to registry and download image
 
 
-6. Why Docker is Popular
+8. Why Docker is Popular
 ------------------------------------------------------------------------
 
 * Deployments using Docker
   Cloud deployment
 
 
-7. Playing with Docker Images
+9. Playing with Docker Images
 ------------------------------------------------------------------------
+*  Tag, search, official versions, remove
 
 - Taking multiple tags and putting it into one image
 - docker run -p 5001:5000 -d in28min/todo-rest-api-h2:1.0.0.RELEASE in28min/todo-rest-api-h2:latest
@@ -115,4 +116,36 @@ docker run in28min/todo-rest-api-h2:1.0.0.RELEASE
   - entry point
   - env
   - folder structure
+
+- docker image remove <imageid> - removes from local server
+
+
+10. Playing with Docker Containers
+------------------------------------------------------------------------
+
+- docker container run -p 5000:5000 -d in28min/todo-rest-api-h2:1.0.0.RELEASE
+  - creating container from image 
+  - launched in detached mode
+
+- docker container pause <imageid> - pauses container
+- docker container unpause <imageid> - pauses container
+
+- docker container inspect <imageid> 
+  - code bindings
+  - volumes
+
+- docker container prune - removes all stopped containers
+- docker container ls -a - running containers 
+
+- stop => SIGTERM - graceful shutdown
+
+- docker run -p 5000:5000 -d --restart=always in28min/todo-rest-api-h2:1.0.0.RELEASE
+- always - restart docker container automatically launched
+
+10. Playing with Docker Commands - stats, system
+------------------------------------------------------------------------
+
+
+
+- prune 
 
