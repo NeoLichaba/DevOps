@@ -145,7 +145,19 @@ docker run in28min/todo-rest-api-h2:1.0.0.RELEASE
 10. Playing with Docker Commands - stats, system
 ------------------------------------------------------------------------
 
+- docker events - helps to see container events
+- should there not be any activity, stop container and relaunch using docker run -p 5000:5000 -d in28min/todo-rest-api-h2:0.0.1-SNAPSHOT
+- docker top - checks which top process is running in a container
+	     - docker top <imageid>
+	     - all processes running in container can be seen; check command 
 
+- docker stats - stats, metrics re: container
+- to add in specific memory and CPU limits:
+  - docker run -p 5001:5000 -m 512m --cpu-quota 5000 -d in28min/todo-rest-api-h2:0.0.1-SNAPSHOT
+  - 512m - max of 512 MB of mem to be used
+  - CPU-quota; 5000 = 5%
+  - check download rate
 
-- prune 
+- docker system df - all aspects managed by docker system manages
 
+ 
