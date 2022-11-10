@@ -210,3 +210,10 @@ d * Run the JAR *
     - ran into a /bin/sh: ... not found error when running the app to the port. This is due to Windows 10 not identifying bash/linux commands. To resolve:
       - saved the file using the following path:docker commit --change="CMD java -jar /tmp/hello-world-rest-api.jar <imagename> <new repo>
       - ran the the file using docker run -p 8080:8080... and it thankfully ran  
+
+- To share image, give fellow user the following details:
+  - image repo name (
+
+16. Use Dockerfile to Build Docker Image
+--------------------------------------------
+
