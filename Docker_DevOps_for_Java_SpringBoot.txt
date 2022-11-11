@@ -212,8 +212,36 @@ d * Run the JAR *
       - ran the the file using docker run -p 8080:8080... and it thankfully ran  
 
 - To share image, give fellow user the following details:
-  - image repo name (
+  - image repo name - in28min/hello-world-rest-api
+  - tag name - manual3
+
 
 16. Use Dockerfile to Build Docker Image
 --------------------------------------------
+
+- Create Dockerfile in root - installed an extension
+- Specify instructions used to execute to create image:
+  a) Create base image. From which image container to be created
+     FROM openjdk:8-jdk-alpine
+  b) Copy jar file and copy into image with same name
+     ADD target/hello-world-rest-api.jar hello-world-rest-api.jar
+  c) Set command to be run at start up
+     ENTRYPOINT ["sh", "-c", "java -jar /hello-world-rest-api.jar"]
+     - in shell, execute command ...
+     - first thing to be executed is java -jar...
+
+In command prompt
+- Create image
+  - docker build -t in28min/hello-world-rest-api:dockerfile1 .
+  - -t - tag
+  - in28min/hello-world-rest-api - repo name
+  - dockerfile1 - tag
+  - dot(.) represents current folder - Build context
+  
+  - should return that image has been built and tagged
+  - run container 
+    - docker run -p 8080:8080 in28min/hello-world-rest-api:dockerfile1 
+    - app should run successfully on port 8080
+
+ 
 
