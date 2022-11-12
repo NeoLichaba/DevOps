@@ -229,7 +229,7 @@ d * Run the JAR *
      ADD target/hello-world-rest-api.jar hello-world-rest-api.jar
   c) Set command to be run at start up
      ENTRYPOINT ["sh", "-c", "java -jar /hello-world-rest-api.jar"]
-     - in shell, execute command ...
+     - in shell, execute command ...java -jar, in root, call
      - first thing to be executed is java -jar...
 
 In command prompt
@@ -246,7 +246,24 @@ In command prompt
     - app should run successfully on port 8080
 
 17. Understanding Docker Image Layers, Caching and Dockerfile
+----------------------------------------------------------------
 
+- Shows steps in image created: docker history in28min/hello-world-rest-api:dockerfile1 
+  FROM - created a base image
+  ADD - Added an entry point, it added a dockerfile size of 16.8mb
+- adds metadata
+- docker layers are cached - docker build -t in28min/hello-world-rest-api:dockerfile1 .
+  - building another image with the same tag. Using already created image 
+- EXPOSE 8080 - run on port 8080; port not published on port
+- run build again
+- only base image will be the same whilst the rest of the steps are not cached
+
+- Make amendment to controller. Build a new jar file
+- jar file has changed and thus a new layer was created - cached
+- expose and entrypoint add metadata
+- add - add data 
+- env - environmental variables
+- 
 
  
 
