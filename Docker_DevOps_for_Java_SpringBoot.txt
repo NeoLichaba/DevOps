@@ -170,6 +170,7 @@ Section 4 - Importing Java Spring Boot Projects
 14. Building Docker Image - manual approach (Eclipse)
 
 a * Build a JAR *
+
   - Maven Build - goals: clean package
   - in pom file, scroll to build - final name - specify the name, configuring for "filename"
   - after build, copy name of jar file
@@ -180,7 +181,9 @@ b * Setup pre-requisites for running the JAR; openjdk:8-jdk-alpine (based on alp
   - run image and copy jar file into container
   - cd into folder where jar is held
   - run docker run -dit openjdk:8-jdk-alpine, image not present, will pull image from docker and try run it
+
   - alpine - minimal Docker image based on Alpine Linux
+
   - image downloaded and container created
   - docker images to check if container created
   - docker container ls - check which container is running
@@ -221,7 +224,9 @@ d * Run the JAR *
 16. Use Dockerfile to Build Docker Image
 --------------------------------------------
 
+
 - Create Dockerfile in root - installed an extension (Docker Toolkit) from Eclipse Marketplace
+
 - Specify instructions used to execute to create image:
   a) Create base image. From which image container to be created
      FROM openjdk:8-jdk-alpine
@@ -229,7 +234,10 @@ d * Run the JAR *
      ADD target/hello-world-rest-api.jar hello-world-rest-api.jar
   c) Set command to be run at start up
      ENTRYPOINT ["sh", "-c", "java -jar /hello-world-rest-api.jar"]
-     - in shell, execute command ...java -jar, in root, call
+
+      - in shell, execute command ...java -jar, in root, call
+
+
      - first thing to be executed is java -jar...
 
 In command prompt
@@ -244,6 +252,7 @@ In command prompt
   - run container 
     - docker run -p 8080:8080 in28min/hello-world-rest-api:dockerfile1 
     - app should run successfully on port 8080
+
 
 17. Understanding Docker Image Layers, Caching and Dockerfile
 ----------------------------------------------------------------
@@ -264,6 +273,7 @@ In command prompt
 - add - add data 
 - env - environmental variables
 - 
+
 
  
 
